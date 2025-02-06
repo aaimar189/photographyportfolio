@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Libre Baskerville';
-    src: url('assets/fonts/LibreBaskerville-Regular.ttf') format('truetype'); /* Fallback */
+    src: url('assets/webfonts/LibreBaskerville-Regular.ttf') format('truetype'); /* Fallback */
     font-weight: normal;
     font-style: normal;
 }
