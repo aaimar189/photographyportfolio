@@ -1,5 +1,5 @@
 body {
-    font-family: Libre Baskerville, serif;
+    font-family: 'Libre Baskerville', serif !important;
     text-align: center;
     background-color: #f8f8f8;
 }
