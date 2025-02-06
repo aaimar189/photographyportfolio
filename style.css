@@ -1,5 +1,14 @@
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('assets/fonts/LibreBaskerville-Regular.ttf') format('woff2'),
+         url('assets/fonts/LibreBaskerville-Regular.ttf') format('woff'),
+         url('assets/fonts/LibreBaskerville-Regular.ttf') format('truetype'); /* Fallback */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Libre Baskerville', serif !important;
+    font-family: 'Libre Baskerville', serif;
     text-align: center;
     background-color: #f8f8f8;
 }
