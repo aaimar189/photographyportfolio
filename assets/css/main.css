@@ -439,7 +439,7 @@ input, select, textarea {
 			transform-origin: 50% 50%;
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: Libre Baskerville;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -505,7 +505,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, textarea, select {
-		font-family: "Source Sans Pro", "sans-serif";
+		font-family: "Libre Baskerville", "serif";
 		font-weight: 300;
 		font-size: 18pt;
 		line-height: 1.75em;
