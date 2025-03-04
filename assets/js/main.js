@@ -91,7 +91,7 @@
 				usePopupCaption: true,
 				popupLoaderText: '',
 				windowMargin: 50,
-				usePopupNav: true
+				usePopupNav: true,
 				caption: function($a) { return $a.attr('title'); } // Explicitly set captions
 			});
 
