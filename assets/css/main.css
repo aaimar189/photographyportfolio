@@ -666,7 +666,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		background-color: #98c593;
+		background-color: #5f6369;
 		border: 0;
 		border-radius: 3.5em;
 		color: #ffffff;
@@ -723,7 +723,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		.button:hover,
 		button:hover {
-			background-color: #a8cea4;
+			background-color: #5f6369;
 		}
 
 		input[type="button"]:active,
