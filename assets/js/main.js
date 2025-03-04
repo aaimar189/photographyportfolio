@@ -92,6 +92,7 @@
 				popupLoaderText: '',
 				windowMargin: 50,
 				usePopupNav: true
+				caption: function($a) { return $a.attr('title'); } // Explicitly set captions
 			});
 
 			// Hack: Adjust margins when 'small' activates.
