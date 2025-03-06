@@ -3,118 +3,112 @@
 
 /* Reset and Box Sizing */
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body, html {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Prevents unwanted scrolling */
-            font-family: Libre Baskerville;
-        }
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents unwanted scrolling */
+    font-family: Libre Baskerville;
+}
 
-        .landing-container {
-            height: 100vh; /* Full screen */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative; /* To position the video */
-            text-align: center;
-            color: white;
-            padding: 0; /* For small screens */
-        }
+.landing-container {
+    height: 100vh; /* Full screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* To position the video */
+    text-align: center;
+    color: white;
+    padding: 0; /* For small screens */
+    overflow: hidden; /* Prevents scrolling from the video */
+}
 
-        /* Add video as a background */
-        .landing-container video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Makes sure video covers the entire container */
-            z-index: -1; /* Places the video behind content */
-        }
+/* Add video as a background */
+.landing-container video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes sure video covers the entire container */
+    z-index: -1; /* Places the video behind content */
+}
 
-        .landing-content {
-            max-width: 600px;
-            padding: 20px;
-            width: 100%; /* Ensures it adjusts to screen size */
-        }
+/* Add fading effect at the top and bottom */
+.landing-container::before, .landing-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust height for fade effect */
+    background: linear-gradient(to bottom, white, transparent);
+    z-index: 1;
+}
 
-        h1 {
-            font-size: 3em;
-            color: white;
-            margin-bottom: 20px;
-        }
+.landing-container::after {
+    top: auto;
+    bottom: 0;
+    transform: rotate(180deg); /* Reverses the gradient for the bottom */
+}
 
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
+.landing-content {
+    max-width: 600px;
+    padding: 20px;
+    width: 100%; /* Ensures it adjusts to screen size */
+}
 
-        .btn {
-            display: inline-block;
-            background-color: #5f6369; /* Your grey color */
-            color: white;
-            font-size: 1.2em;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
+h1 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 20px;
+}
 
-        .btn:hover {
-            background-color: #43484e;
-        }
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em; /* Smaller font size on mobile */
-            }
-            p {
-                font-size: 1em; /* Smaller text */
-            }
-            .btn {
-                font-size: 1em; /* Smaller button on mobile */
-                padding: 12px 25px; /* Adjust padding for mobile */
-            }
-        }
+.btn {
+    display: inline-block;
+    background-color: #5f6369; /* Your grey color */
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2em; /* Even smaller font size */
-            }
-            .btn {
-                font-size: 1em;
-                padding: 10px 20px; /* Even more padding adjustment */
-            }
-        }
+.btn:hover {
+    background-color: #43484e;
+}
 
-/* Responsive Styles */
+/* Responsive styles */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5em;
+        font-size: 2.5em; /* Smaller font size on mobile */
     }
     p {
-        font-size: 1em;
+        font-size: 1em; /* Smaller text */
     }
     .btn {
-        font-size: 1em;
-        padding: 12px 25px;
+        font-size: 1em; /* Smaller button on mobile */
+        padding: 12px 25px; /* Adjust padding for mobile */
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 2em;
+        font-size: 2em; /* Even smaller font size */
     }
     .btn {
         font-size: 1em;
-        padding: 10px 20px;
+        padding: 10px 20px; /* Even more padding adjustment */
     }
 }
