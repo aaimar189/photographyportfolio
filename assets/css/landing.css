@@ -39,7 +39,7 @@ body, html {
     object-fit: cover; /* Makes sure video covers the entire container */
     z-index: -1; /* Places the video behind content */
     opacity: 0; /* Initially hidden for fade-in effect */
-    animation: fadeInOut 10s ease-in-out infinite; /* Dynamic fade effect */
+    animation: fadeInOut 12s ease-in-out infinite; /* Dynamic fade effect with smooth transition */
 }
 
 /* Keyframes for the fade-in and fade-out animation */
