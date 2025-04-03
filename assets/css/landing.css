@@ -113,3 +113,12 @@ p {
         padding: 10px 20px; /* Even more padding adjustment */
     }
 }
+
+/* Ensure the logo is sized appropriately */
+.logo {
+    display: block;
+    margin: 0 auto 20px; /* Centers the logo and adds space below it */
+    max-width: 100px; /* Adjust as needed for logo size */
+    height: auto;
+}
+
