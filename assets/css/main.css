@@ -111,6 +111,21 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+
+/* Logo container aligns image and name */
+.logo-container {
+	display: flex;
+	align-items: center;
+	gap: 10px; /* spacing between logo and name */
+}
+
+/* Logo image style */
+.logo-container .logo {
+	height: 40px; /* adjust as needed */
+	width: auto;
+}
+
+
 /* Spinner */
 
 	@-moz-keyframes spinner-rotate {
