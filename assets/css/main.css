@@ -115,14 +115,15 @@ input, select, textarea {
 /* Logo container aligns image and name */
 .logo-container {
 	display: flex;
-	align-items: center;
-	gap: 10px; /* spacing between logo and name */
+	align-items: center;     /* Vertically center logo and text */
+	gap: 10px;                /* Space between logo and text */
 }
 
-/* Logo image style */
+/* Adjust logo size */
 .logo-container .logo {
-	height: 40px; /* adjust as needed */
+	height: 40px;            /* Or whatever height fits your design */
 	width: auto;
+	display: block;
 }
 
 
