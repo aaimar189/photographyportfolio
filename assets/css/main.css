@@ -112,42 +112,6 @@ input, select, textarea {
 		}
 
 
-/* Logo container aligns image and name */
-.logo-container {
-	display: flex;
-	align-items: center;     /* Vertically center logo and text */
-	gap: 10px;                /* Space between logo and text */
-}
-
-/* Adjust logo size */
-.logo-container .logo {
-	height: 30px;            /* Or whatever height fits your design */
-	width: auto;
-	display: block;
-}
-
-
-#header .header-inner {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 20px;
-	flex-wrap: wrap;
-}
-
-#header nav ul {
-	display: flex;
-	gap: 20px;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-#header nav a {
-	text-decoration: none;
-	color: inherit;
-	font-weight: 500;
-}
 
 
 /* Spinner */
