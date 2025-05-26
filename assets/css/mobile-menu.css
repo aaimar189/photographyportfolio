@@ -1,0 +1,248 @@
+/* Mobile Menu Styles */
+
+/* Desktop layout */
+@media screen and (min-width: 737px) {
+    .mobile-only {
+        display: none !important;
+    }
+
+    #header {
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        height: 3em;
+        line-height: 3em;
+        box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+    }
+
+    #header h1 {
+        position: absolute;
+        left: 1em;
+        top: 0;
+        height: 3em;
+        line-height: 3em;
+        margin: 0;
+    }
+
+    #header nav {
+        position: absolute;
+        right: 0.5em;
+        top: 0;
+        height: 3em;
+        line-height: 3em;
+        display: block;
+    }
+
+    #header nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #header nav ul li {
+        display: inline-block;
+        margin-left: 0.5em;
+        font-size: 0.9em;
+    }
+
+    #header nav ul li a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        height: 3em;
+        line-height: 3em;
+        padding: 0 0.5em;
+    }
+
+    #mobile-nav-container {
+        display: none;
+    }
+}
+
+/* Mobile layout */
+@media screen and (max-width: 736px) {
+
+    /* Hide desktop menu */
+    #header>nav {
+        display: none !important;
+    }
+
+    /* Add space for fixed header */
+    body {
+        padding-top: 60px !important;
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
+    }
+
+    /* Main header styles */
+    #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 1000;
+        height: auto;
+        line-height: normal;
+        box-shadow: none;
+        /* Remove default shadow to avoid doubling */
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Mobile header container */
+    #mobile-nav-container {
+        width: 100%;
+        display: block;
+    }
+
+    /* Header top bar with logo and hamburger */
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0 0 15px;
+        background: white;
+        width: 100%;
+        box-sizing: border-box;
+        height: 60px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 1001;
+    }
+
+    /* Logo styles */
+    .mobile-header h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.4em;
+        position: static;
+        height: auto;
+        line-height: 1.4;
+        text-align: left;
+        flex-grow: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80%;
+        font-weight: bold;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        color: #000 !important;
+    }
+
+    /* Hamburger button */
+    .hamburger-btn {
+        background: none;
+        border: none;
+        font-size: 26px;
+        cursor: pointer;
+        color: #000;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 130px;
+        height: 60px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        outline: none;
+        touch-action: manipulation;
+        transition: transform 0.2s ease;
+        position: relative;
+        right: -240px;
+        top: 3px;
+    }
+
+    /* Add visual feedback for the hamburger */
+    .hamburger-btn:hover {
+        opacity: 0.8;
+    }
+
+    .hamburger-btn:active,
+    .hamburger-btn.touch-active {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+
+    /* Close icon style when menu is active */
+    .hamburger-btn.is-active {
+        transform: rotate(0deg);
+    }
+
+    /* Mobile menu styles */
+    .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        background: white;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    /* Show mobile menu when active */
+    .mobile-menu.active {
+        max-height: 450px;
+        /* Adjust based on the number of menu items */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Menu items list */
+    .mobile-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Individual menu items */
+    .mobile-menu ul li {
+        border-top: 1px solid #eee;
+        text-align: center;
+    }
+
+    /* Menu links */
+    .mobile-menu ul li a {
+        display: block;
+        padding: 15px;
+        color: #000;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-size: 1.1em;
+        font-weight: normal;
+    }
+
+    /* Menu link hover state */
+    .mobile-menu ul li a:hover {
+        background-color: #f5f5f5;
+        transform: translateX(5px);
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 350px) {
+
+    /* Make the logo smaller on very small screens */
+    .mobile-header h1 {
+        font-size: 1.2em;
+        max-width: 70%;
+    }
+
+    /* Ensure menu items are properly sized */
+    .mobile-menu ul li a {
+        padding: 12px 10px;
+        font-size: 1em;
+    }
+}
