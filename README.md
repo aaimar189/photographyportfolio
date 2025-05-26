@@ -1,6 +1,6 @@
 # A. Aimar Photo Portfolio
 
-This is the photography portfolio of Andrea.  
+This is photography portfolio of Andrea.  
 Visit my portfolio at: [https://aaimarphoto.com]
 
 ## About Me
