@@ -15,24 +15,29 @@ html {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* Prevents unwanted scrolling */
     font-family: Libre Baskerville;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+    /* Prevent layout shifts */
+    will-change: auto;
 }
 
 .landing-container {
     height: 100vh;
-    /* Full screen */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    /* To position the video */
     text-align: center;
     color: white;
     padding: 0;
-    /* For small screens */
     overflow: hidden;
-    /* Prevents scrolling from the video */
+    /* Performance optimizations */
+    contain: layout style paint;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 /* Add video as a background */
@@ -43,36 +48,70 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Makes sure video covers the entire container */
     z-index: -1;
-    /* Places the video behind content */
     opacity: 0;
-    /* Initially hidden for fade-in effect */
-    animation: fadeInOut 12s ease-in-out infinite;
-    /* Dynamic fade effect with smooth transition */
+    transition: opacity 0.3s ease-out;
+    will-change: opacity;
+    /* Hardware acceleration and optimization */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Prevent video controls */
+    pointer-events: none;
 }
 
-/* Keyframes for the fade-in and fade-out animation */
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-        /* Start with invisible video */
-    }
+/* Video loaded state */
+.landing-container video[data-loaded] {
+    opacity: 1;
+}
 
-    20% {
-        opacity: 1;
-        /* Fade in to visible */
-    }
+/* Fallback background image */
+.video-fallback {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/intro.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    /* Optimize background rendering */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
 
-    80% {
-        opacity: 1;
-        /* Keep it visible for most of the time */
-    }
+/* Loading indicator */
+.video-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
 
-    100% {
-        opacity: 0;
-        /* Fade out to invisible */
-    }
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Page loaded optimization */
+body.loaded * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .landing-content {
