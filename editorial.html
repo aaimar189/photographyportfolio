@@ -8,7 +8,11 @@
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
     <!-- Link to your main CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="assets/css/mobile-menu.css" />
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
@@ -16,13 +20,15 @@
 
 
     <!-- Google tag (gtag.js) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPXTERYLPC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-SPXTERYLPC');
+        function gtag(){dataLayer.push(arguments);} 
+        window.addEventListener('load', function(){
+            gtag('js', new Date());
+            gtag('config', 'G-SPXTERYLPC');
+        }, { once: true });
     </script>
 
 
@@ -82,11 +88,11 @@
             </header>
 
             <!-- Gallery  -->
-            <div class="gallery">
+            <div class="gallery defer-visibility">
                 <article class="from-left">
                     <a href="images/fulls/01.webp" title="Yuyuan Garden, Shanghai" class="image fit poptrox"
                         data-gallery="editorial1">
-                        <img src="images/thumbs/01.webp" title="Yuyuan Garden, Shanghai" alt="" />
+                        <img src="images/thumbs/01.webp" title="Yuyuan Garden, Shanghai" alt="" loading="lazy" decoding="async" />
                     </a>
                     <!-- More images inside the slideshow -->
                     <a href="images/fulls/01-2.webp" title="Yuyuan Garden, Shanghai" class="poptrox"
@@ -102,7 +108,7 @@
                 <article class="from-right">
                     <a href="images/fulls/02.webp" title="Xishan Island, Jiangsu" class="image fit poptrox"
                         data-gallery="editorial2">
-                        <img src="images/thumbs/02.webp" title="Xishan Island, Jiangsu" alt="" />
+                        <img src="images/thumbs/02.webp" title="Xishan Island, Jiangsu" alt="" loading="lazy" decoding="async" />
                     </a>
                     <!-- More images inside the slideshow -->
                     <a href="images/fulls/02-2.webp" title="Xishan Island, Jiangsu" class="poptrox"
@@ -118,7 +124,7 @@
                 <article class="from-left">
                     <a href="images/fulls/03.webp" title="Pingtan, Jiangxi" class="image fit poptrox"
                         data-gallery="editorial3">
-                        <img src="images/thumbs/03.webp" title="Pingtan, Jiangxi" alt="" />
+                        <img src="images/thumbs/03.webp" title="Pingtan, Jiangxi" alt="" loading="lazy" decoding="async" />
                     </a>
                     <!-- More images inside the slideshow -->
                     <a href="images/fulls/03-2.webp" title="Pingtan, Jiangxi" class="poptrox"
@@ -134,7 +140,7 @@
                 <article class="from-right">
                     <a href="images/fulls/04.webp" title="Deqin County, Yunnan" class="image fit poptrox"
                         data-gallery="editorial4">
-                        <img src="images/thumbs/04.webp" title="Deqin County, Yunnan" alt="" />
+                        <img src="images/thumbs/04.webp" title="Deqin County, Yunnan" alt="" loading="lazy" decoding="async" />
                     </a>
                     <!-- More images inside the slideshow -->
                     <a href="images/fulls/04-2.webp" title="Deqin County, Yunnan" class="poptrox"
@@ -150,7 +156,7 @@
                 <article class="from-left">
                     <a href="images/fulls/05.webp" title="Meijiawu Tea Gardens, Zhejiang" class="image fit poptrox"
                         data-gallery="editorial5">
-                        <img src="images/thumbs/05.webp" title="Meijiawu Tea Gardens, Zhejiang" alt="" />
+                        <img src="images/thumbs/05.webp" title="Meijiawu Tea Gardens, Zhejiang" alt="" loading="lazy" decoding="async" />
                     </a>
                     <!-- More images inside the slideshow -->
                     <a href="images/fulls/05-2.webp" title="Meijiawu Tea Gardens, Zhejiang" class="poptrox"
@@ -166,7 +172,7 @@
                 <article class="from-right">
                     <a href="images/fulls/06.webp" title="Lijiang, Yunnan" class="image fit poptrox"
                         data-gallery="editorial6">
-                        <img src="images/thumbs/06.webp" title="Lijiang, Yunnan" alt="" />
+                        <img src="images/thumbs/06.webp" title="Lijiang, Yunnan" alt="" loading="lazy" decoding="async" />
                     </a>
                     <!-- More images inside the slideshow -->
                     <a href="images/fulls/06-2.webp" title="Lijiang, Yunnan" class="poptrox"
@@ -223,15 +229,15 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/jquery.min.js" defer></script>
+    <script src="assets/js/jquery.poptrox.min.js" defer></script>
+    <script src="assets/js/jquery.scrolly.min.js" defer></script>
+    <script src="assets/js/jquery.scrollex.min.js" defer></script>
+    <script src="assets/js/browser.min.js" defer></script>
+    <script src="assets/js/breakpoints.min.js" defer></script>
+    <script src="assets/js/util.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/mobile-menu.js" defer></script>
 </body>
 
 </html>

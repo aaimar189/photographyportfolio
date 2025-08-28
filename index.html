@@ -3,8 +3,11 @@
 
 <head>
     <!-- Resource hints for faster loading -->
-    <link rel="preload" href="assets/video.mp4" as="video" type="video/mp4">
-    <link rel="preload" href="images/intro.webp" as="image">
+    <link rel="preload" href="images/intro.webp" as="image" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Link to the landing page specific CSS file (styles for the landing page) -->
     <link rel="stylesheet" href="assets/css/landing.css"> <!-- Correct path for landing page styles -->
@@ -19,10 +22,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPXTERYLPC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-SPXTERYLPC');
+        function gtag(){dataLayer.push(arguments);} 
+        window.addEventListener('load', function(){
+            gtag('js', new Date());
+            gtag('config', 'G-SPXTERYLPC');
+        }, { once: true });
     </script>
 
 </head>
@@ -31,8 +35,8 @@
     <div class="landing-container">
 
         <!-- Video Background -->
-        <video autoplay muted loop preload="metadata" poster="images/intro.webp" playsinline 
-               loading="eager" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
+    <video autoplay muted loop preload="none" poster="images/intro.webp" playsinline 
+           loading="eager" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
             <source src="assets/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -44,7 +48,7 @@
         <div class="video-loading" id="videoLoading">
             <div class="loading-spinner"></div>
         </div>
-        <div class="landing-content">
+    <div class="landing-content defer-visibility">
             <!-- Logo above the text -->
             <img src="images/logo.webp" alt="Logo" class="logo">
             <h1>ANDREA AIMAR</h1>

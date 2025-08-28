@@ -1,8 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
-@import url("fontawesome-all.min.css");
+/* Font CSS imports moved to HTML with preload/preconnect for non-blocking load. */
 
 body {
 	font-family: 'Libre Baskerville', serif;
+}
+
+/* Performance: sensible defaults for images */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Optional: stabilize custom gallery tiles with a default aspect ratio */
+.custom-gallery-item img {
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	width: 100%;
+	height: auto;
+}
+
+/* Performance: avoid rendering off-screen sections until needed */
+.main[hidden],
+.defer-visibility {
+	content-visibility: auto;
+	contain-intrinsic-size: 1px 1000px; /* reserve space to avoid layout shift */
 }
 
 /*

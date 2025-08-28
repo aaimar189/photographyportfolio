@@ -8,7 +8,11 @@
 	<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 	<!-- Link to your main CSS file -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 	<link rel="stylesheet" href="assets/css/mobile-menu.css" />
 	<!-- Glide.js CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -19,13 +23,16 @@
 
 
 	<!-- Google tag (gtag.js) -->
+	<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPXTERYLPC"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'G-SPXTERYLPC');	</script>
+		function gtag(){dataLayer.push(arguments);} 
+		window.addEventListener('load', function(){
+			gtag('js', new Date());
+			gtag('config', 'G-SPXTERYLPC');
+		}, { once: true });
+	</script>
 
 
 </head>
@@ -81,11 +88,11 @@
 			</header>
 
 			<!-- Gallery  -->
-			<div class="gallery">
+			<div class="gallery defer-visibility">
 				<article class="from-left">
 					<a href="images/fulls/07.webp" title="Dairy Queen Xmas Decoration, Shanghai"
 						class="image fit poptrox" data-gallery="architecture1">
-						<img src="images/thumbs/07.webp" title="Dairy Queen Xmas Decoration, Shanghai" alt="" />
+						<img src="images/thumbs/07.webp" title="Dairy Queen Xmas Decoration, Shanghai" alt="" loading="lazy" decoding="async" />
 					</a>
 					<!-- More images inside the slideshow -->
 					<a href="images/fulls/07-2.webp" title="Dairy Queen Xmas Decoration, Shanghai" class="poptrox"
@@ -97,7 +104,7 @@
 				<article class="from-right">
 					<a href="images/fulls/08.webp" title="Long Museum, Panlong Xintiandi, Shanghai"
 						class="image fit poptrox" data-gallery="architecture2">
-						<img src="images/thumbs/08.webp" title="Long Museum, Panlong Xintiandi, Shanghai" alt="" />
+						<img src="images/thumbs/08.webp" title="Long Museum, Panlong Xintiandi, Shanghai" alt="" loading="lazy" decoding="async" />
 					</a>
 					<!-- More images inside the slideshow -->
 					<a href="images/fulls/08-2.webp" title="Long Museum, Panlong Xintiandi, Shanghai" class="poptrox"
@@ -113,7 +120,7 @@
 				<article class="from-left">
 					<a href="images/fulls/09.webp" title="AKD Luxury Cars Mall, Jiading, Shanghai"
 						class="image fit poptrox" data-gallery="architecture3">
-						<img src="images/thumbs/09.webp" title="AKD Luxury Cars Mall, Jiading, Shanghai" alt="" />
+						<img src="images/thumbs/09.webp" title="AKD Luxury Cars Mall, Jiading, Shanghai" alt="" loading="lazy" decoding="async" />
 					</a>
 					<!-- More images inside the slideshow -->
 					<a href="images/fulls/09-2.webp" title="AKD Luxury Cars Mall, Jiading, Shanghai" class="poptrox"
@@ -129,7 +136,7 @@
 				<article class="from-right">
 					<a href="images/fulls/10.webp" title="Bakery and Spice, Panlong Xintiandi, Shanghai"
 						class="image fit poptrox" data-gallery="architecture4">
-						<img src="images/thumbs/10.webp" title="Bakery and Spice, Panlong Xintiandi, Shanghai" alt="" />
+						<img src="images/thumbs/10.webp" title="Bakery and Spice, Panlong Xintiandi, Shanghai" alt="" loading="lazy" decoding="async" />
 					</a>
 					<!-- More images inside the slideshow -->
 					<a href="images/fulls/10-2.webp" title="Bakery and Spice, Panlong Xintiandi, Shanghai"
@@ -145,7 +152,7 @@
 				<article class="from-left">
 					<a href="images/fulls/11.webp" title="Neo Bridge Bar, Putuo, Shanghai" class="image fit poptrox"
 						data-gallery="architecture5">
-						<img src="images/thumbs/11.webp" title="Neo Bridge Bar, Putuo, Shanghai" alt="" />
+						<img src="images/thumbs/11.webp" title="Neo Bridge Bar, Putuo, Shanghai" alt="" loading="lazy" decoding="async" />
 					</a>
 					<!-- More images inside the slideshow -->
 					<a href="images/fulls/11-2.webp" title="Neo Bridge Bar, Putuo, Shanghai" class="poptrox"
@@ -162,7 +169,7 @@
 					<a href="images/fulls/12.webp" title="Wan Service Corporate Offices, Jing'an, Shanghai"
 						class="image fit poptrox" data-gallery="architecture6">
 						<img src="images/thumbs/12.webp" title="Wan Service Corporate Offices, Jing'an, Shanghai"
-							alt="" />
+							alt="" loading="lazy" decoding="async" />
 					</a>
 					<!-- More images inside the slideshow -->
 					<a href="images/fulls/12-2.webp" title="Wan Service Corporate Offices, Jing'an, Shanghai"
@@ -220,15 +227,15 @@
 	</footer>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.poptrox.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/mobile-menu.js"></script>
+	<script src="assets/js/jquery.min.js" defer></script>
+	<script src="assets/js/jquery.poptrox.min.js" defer></script>
+	<script src="assets/js/jquery.scrolly.min.js" defer></script>
+	<script src="assets/js/jquery.scrollex.min.js" defer></script>
+	<script src="assets/js/browser.min.js" defer></script>
+	<script src="assets/js/breakpoints.min.js" defer></script>
+	<script src="assets/js/util.js" defer></script>
+	<script src="assets/js/main.js" defer></script>
+	<script src="assets/js/mobile-menu.js" defer></script>
 </body>
 
 </html>
