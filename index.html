@@ -21,60 +21,91 @@
       overflow: hidden;
     }
 
+    /* SLIDESHOW */
+    .slideshow { position:absolute; top:0; left:0; width:100%; height:100%; }
+    .slide {
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      background-size: cover; background-position: center;
+      opacity:0; transition: opacity 1.5s ease-in-out;
+    }
+    .slide.active { opacity:1; }
 
-  <!-- SLIDESHOW -->
-  <div class="slideshow">
-    <div class="slide active" style="background-image:url('images/slide1.webp')"></div>
-    <div class="slide" style="background-image:url('images/slide2.webp')"></div>
-    <div class="slide" style="background-image:url('images/slide3.webp')"></div>
+    /* CAPTION IN BASSO */
+    .caption {
+      position: absolute;
+      bottom: 20px; width: 100%;
+      text-align: center; font-size: 0.7em;
+      color: white; text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+
+    /* TESTO CENTRALE */
+    .landing-content {
+      position: absolute;
+      top: 40%; left:0; width: 100%;
+      text-align: center;
+      transform: translateY(-50%);
+    }
+
+    .logo { width:120px; margin-bottom:20px; }
+
+    h1 { margin:10px 0; font-size:2em; letter-spacing:2px; }
+    p { margin-bottom:20px; font-size:1em; }
+
+    /* BOTTONE COME PRIMA */
+    .btn {
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="landing-container">
+
+    <!-- SLIDES -->
+    <div class="slideshow">
+      <div class="slide active" style="background-image:url('images/slide1.webp')"></div>
+      <div class="slide" style="background-image:url('images/slide2.webp')"></div>
+      <div class="slide" style="background-image:url('images/slide3.webp')"></div>
+    </div>
+
+    <!-- TESTO CAMBIANTE -->
+    <div class="caption" id="caption">
+      Timelapse of Kawagarbo Mountain. Yunnan, Deqen ©2025 all rights reserved Shanghai, China
+    </div>
+
+    <!-- CONTENUTO CENTRALE -->
+    <div class="landing-content">
+      <img src="images/logo.webp" alt="Logo" class="logo">
+      <h1>ANDREA AIMAR</h1>
+      <p>Editorial & Architecture Photographer Based in Shanghai</p>
+      <a href="home.html" class="btn">Enter Site</a>
+    </div>
   </div>
 
-  <!-- CAPTION CHE CAMBIA -->
-  <p class="caption" id="caption">
-    Timelapse of Kawagarbo Mountain. Yunnan, Deqen ©2025 all rights reserved Shanghai, China
-  </p>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const captions = [
+      "Timelapse of Kawagarbo Mountain. Yunnan, Deqen ©2025 all rights reserved Shanghai, China",
+      "Shanghai Skyline at Dawn ©2025 all rights reserved Shanghai, China",
+      "Ancient Village in Anhui ©2025 all rights reserved Shanghai, China"
+    ];
+    const captionEl = document.getElementById('caption');
+    let i = 0;
 
-  <!-- CONTENUTO CENTRALE (logo, nome, bottone) -->
-  <div class="landing-content defer-visibility">
-    <img src="images/logo.webp" alt="Logo" class="logo">
-    <h1>ANDREA AIMAR</h1>
-    <p>Editorial & Architecture Photographer Based in Shanghai</p>
-    <a href="home.html" class="btn">Enter Site</a> <!-- IL BOTTONE RESTA COME PRIMA -->
-  </div>
-</div>
-
-<script>
-  const slides = document.querySelectorAll('.slide');
-  const captions = [
-    "Timelapse of Kawagarbo Mountain. Yunnan, Deqen ©2025 all rights reserved Shanghai, China",
-    "Shanghai Skyline at Dawn ©2025 all rights reserved Shanghai, China",
-    "Ancient Village in Anhui ©2025 all rights reserved Shanghai, China"
-  ];
-  const captionEl = document.getElementById('caption');
-  let i = 0;
-
-  setInterval(() => {
-    slides[i].classList.remove('active');
-    i = (i + 1) % slides.length;
-    slides[i].classList.add('active');
-    captionEl.textContent = captions[i];
-  }, 5000);
-</script>
-
-<style>
-  .slideshow {
-    position:absolute; top:0; left:0; width:100%; height:100%;
-  }
-  .slide {
-    position:absolute; top:0; left:0; width:100%; height:100%;
-    background-size:cover; background-position:center;
-    opacity:0; transition:opacity 1.5s ease-in-out;
-  }
-  .slide.active { opacity:1; }
-
-  .caption {
-    position:absolute; bottom:20px; width:100%;
-    text-align:center; font-size:0.5em; color:white; padding:0 20px;
-    text-shadow:0 0 10px rgba(0,0,0,0.7);
-  }
-</style>
+    setInterval(() => {
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+      captionEl.textContent = captions[i];
+    }, 5000);
+  </script>
+</body>
+</html>
