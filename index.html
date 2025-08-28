@@ -4,14 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andrea Aimar · Photographer</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body, html { margin:0; padding:0; height:100%; background:black; color:white; font-family:sans-serif; }
+    body, html { margin:0; padding:0; height:100%; background:black; color:white; font-family:'Libre Baskerville', serif; }
     .slideshow { position:relative; height:100vh; overflow:hidden; }
     .slide { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; display:none; }
     .slide.active { display:block; }
-    .caption { position:absolute; bottom:20px; width:100%; text-align:center; font-size:0.7em; color:white; }
+    .caption { position:absolute; bottom:20px; width:100%; text-align:center; font-size:0.7em; color:white; text-shadow:0 0 10px rgba(0,0,0,0.7); }
     .content { position:absolute; top:40%; width:100%; text-align:center; }
-    .btn { color:white; text-decoration:none; border:1px solid white; padding:10px 20px; }
+    .logo { width:120px; margin-bottom:20px; }
+    h1 { margin:10px 0; font-size:2em; letter-spacing:2px; }
+    p { margin-bottom:20px; font-size:1em; }
+    .btn { color:white; text-decoration:none; border:1px solid white; padding:10px 20px; border-radius:30px; }
+    .btn:hover { background:white; color:black; }
   </style>
 </head>
 <body>
@@ -24,12 +32,12 @@
 
     <!-- TESTO CHE CAMBIA -->
     <div class="caption" id="caption">
-      <!-- il primo testo viene messo qui -->
       Timelapse of Kawagarbo Mountain. Yunnan, Deqen ©2025 all rights reserved Shanghai, China
     </div>
 
     <!-- TESTO FISSO AL CENTRO -->
     <div class="content">
+      <img src="images/logo.webp" alt="Logo" class="logo">
       <h1>ANDREA AIMAR</h1>
       <p>Editorial & Architecture Photographer Based in Shanghai</p>
       <a href="home.html" class="btn">Enter Site</a>
@@ -52,7 +60,7 @@
       slides[i].classList.remove('active');
       i = (i + 1) % slides.length;
       slides[i].classList.add('active');
-      captionEl.textContent = captions[i]; // cambia testo sotto
+      captionEl.textContent = captions[i];
     }, 5000);
   </script>
 
