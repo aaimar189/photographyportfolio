@@ -1,159 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Resource hints for faster loading -->
-    <link rel="preload" href="images/intro.webp" as="image" fetchpriority="high">
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Link to the landing page specific CSS file (styles for the landing page) -->
-    <link rel="stylesheet" href="assets/css/landing.css"> <!-- Correct path for landing page styles -->
-
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrea Aimar · Editorial & Architecture Photographer Based in Shanghai</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPXTERYLPC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);} 
-        window.addEventListener('load', function(){
-            gtag('js', new Date());
-            gtag('config', 'G-SPXTERYLPC');
-        }, { once: true });
-    </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrea Aimar · Photographer</title>
+  <style>
+    body, html { margin:0; padding:0; height:100%; background:black; color:white; font-family:sans-serif; }
+    .slideshow { position:relative; height:100vh; overflow:hidden; }
+    .slide { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; display:none; }
+    .slide.active { display:block; }
+    .caption { position:absolute; bottom:20px; width:100%; text-align:center; font-size:0.7em; color:white; }
+    .content { position:absolute; top:40%; width:100%; text-align:center; }
+    .btn { color:white; text-decoration:none; border:1px solid white; padding:10px 20px; }
+  </style>
 </head>
-
 <body>
-    <div class="landing-container">
 
-        <!-- Video Background -->
-    <video autoplay muted loop preload="none" poster="images/intro.webp" playsinline 
-           loading="eager" disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback">
-            <source src="assets/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <!-- Fallback background image for when video is loading -->
-        <div class="video-fallback"></div>
-        
-        <!-- Loading indicator -->
-        <div class="video-loading" id="videoLoading">
-            <div class="loading-spinner"></div>
-        </div>
-    <div class="landing-content defer-visibility">
-            <!-- Logo above the text -->
-            <img src="images/logo.webp" alt="Logo" class="logo">
-            <h1>ANDREA AIMAR</h1>
-            <p>Editorial & Architecture Photographer Based in Shanghai</p>
-            <a href="home.html" class="btn">Enter Site</a>
-        </div>
+  <div class="slideshow">
+    <!-- IMMAGINI -->
+    <img src="images/slide1.webp" class="slide active">
+    <img src="images/slide2.webp" class="slide">
+    <img src="images/slide3.webp" class="slide">
 
-        <!-- New sentence added here -->
-        <p
-            style="position: absolute; bottom: 20px; width: 100%; text-align: center; font-size: 0.5em; color: white; padding: 0 20px;">
-            Timelapse of Kawagarbo Mountain. Yunnan, Deqen
-            ©2025 all rights reserved Shanghai, China
-        </p>
+    <!-- TESTO CHE CAMBIA -->
+    <div class="caption" id="caption">
+      <!-- il primo testo viene messo qui -->
+      Timelapse of Kawagarbo Mountain. Yunnan, Deqen ©2025 all rights reserved Shanghai, China
     </div>
 
-    <script>
-        // Optimized video loading and playback
-        (function() {
-            'use strict';
-            
-            // Early video detection and loading
-            const video = document.querySelector('video');
-            const loadingIndicator = document.getElementById('videoLoading');
-            
-            if (!video) return;
-            
-            let hasPlayed = false;
-            
-            // Immediate optimization
-            video.volume = 0; // Ensure muted for autoplay
-            video.defaultMuted = true;
-            video.muted = true;
-            
-            // Fast loading strategy
-            function initVideoPlayback() {
-                if (video.readyState >= 3) { // HAVE_FUTURE_DATA
-                    startPlayback();
-                } else {
-                    video.addEventListener('canplay', startPlayback, { once: true });
-                }
-            }
-            
-            function startPlayback() {
-                if (hasPlayed) return;
-                hasPlayed = true;
-                
-                video.setAttribute('data-loaded', 'true');
-                hideLoadingIndicator();
-                
-                // Immediate play attempt
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log('Autoplay prevented:', error.name);
-                        // Will play on first user interaction
-                    });
-                }
-            }
-            
-            function hideLoadingIndicator() {
-                if (loadingIndicator) {
-                    loadingIndicator.style.opacity = '0';
-                    setTimeout(() => {
-                        loadingIndicator.style.display = 'none';
-                    }, 300);
-                }
-            }
-            
-            // Multiple loading strategies
-            video.addEventListener('loadeddata', initVideoPlayback, { once: true });
-            video.addEventListener('canplaythrough', function() {
-                video.setAttribute('data-ready', 'true');
-            }, { once: true });
-            
-            // Error handling
-            video.addEventListener('error', function(e) {
-                console.log('Video error:', e);
-                hideLoadingIndicator();
-            });
-            
-            // Optimize for touch devices
-            document.addEventListener('touchstart', function() {
-                if (video.paused && hasPlayed) {
-                    video.play().catch(() => {});
-                }
-            }, { once: true, passive: true });
-            
-            // Immediate check if video is already loaded
-            if (video.readyState >= 2) {
-                initVideoPlayback();
-            }
-            
-            // Force load if not started within 1 second
-            setTimeout(() => {
-                if (!hasPlayed && video.readyState < 2) {
-                    video.load();
-                }
-            }, 1000);
-        })();
-        
-        // Page load optimization
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
-        }, { once: true });
-    </script>
-</body>
+    <!-- TESTO FISSO AL CENTRO -->
+    <div class="content">
+      <h1>ANDREA AIMAR</h1>
+      <p>Editorial & Architecture Photographer Based in Shanghai</p>
+      <a href="home.html" class="btn">Enter Site</a>
+    </div>
+  </div>
 
+  <script>
+    // Prepara le immagini e i testi
+    const slides = document.querySelectorAll('.slide');
+    const captions = [
+      "Timelapse of Kawagarbo Mountain. Yunnan, Deqen ©2025 all rights reserved Shanghai, China", // testo img1
+      "Shanghai Skyline at Dawn ©2025 all rights reserved Shanghai, China",                     // testo img2
+      "Ancient Village in Anhui ©2025 all rights reserved Shanghai, China"                      // testo img3
+    ];
+    const captionEl = document.getElementById('caption');
+    let i = 0;
+
+    // Ogni 5 secondi cambia immagine e testo
+    setInterval(() => {
+      slides[i].classList.remove('active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('active');
+      captionEl.textContent = captions[i]; // cambia testo sotto
+    }, 5000);
+  </script>
+
+</body>
 </html>
