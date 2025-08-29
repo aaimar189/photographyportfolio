@@ -21,10 +21,18 @@
       position: relative;
       height: 100vh;
       overflow: hidden;
+      padding: 20px; /* spazio per la cornice */
+      box-sizing: border-box;
     }
 
-    /* SLIDESHOW */
-    .slideshow { position:absolute; top:0; left:0; width:100%; height:100%; }
+    /* CORNICE */
+    .slideshow {
+      position:absolute;
+      top:20px; left:20px; right:20px; bottom:20px;
+      border: 6px solid white; /* spessore cornice */
+      overflow: hidden;
+    }
+
     .slide {
       position:absolute; top:0; left:0; width:100%; height:100%;
       background-size: cover; background-position: center;
@@ -35,9 +43,11 @@
     /* CAPTION IN BASSO */
     .caption {
       position: absolute;
-      bottom: 20px; width: 100%;
+      bottom: 40px; /* rialzato per stare dentro la cornice */
+      width: 100%;
       text-align: center; font-size: 0.5em;
       color: white; padding: 0 20px;
+      box-sizing: border-box;
     }
 
     /* TESTO CENTRALE */
@@ -47,7 +57,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      width: auto; /* opzionale */
+      width: auto;
     }
 
     .logo { width:120px; margin-bottom:20px; }
@@ -73,7 +83,7 @@
       <img src="images/logo.webp" alt="Logo" class="logo">
       <h1>ANDREA AIMAR</h1>
       <p>Editorial & Architecture Photographer Based in Shanghai</p>
-      <a href="home.html" class="btn">Discover My Work</a> <!-- BOTTONE DAL CODICE ORIGINALE -->
+      <a href="home.html" class="btn">Discover My Work</a>
     </div>
   </div>
 
