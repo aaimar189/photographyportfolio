@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Sudan: 2012-2022 - ANDREA AIMAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles-clean.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'raleway': ['Libre Baskerville', 'serif'],
+                        'gotham': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white">
+    <div id="page" class="min-h-screen">
+        <!-- Clean Tailwind Navigation -->
+        <header class="top-0 left-0 right-0 z-50 bg-transparent">
+            <nav class="max-w-screen-2xl mx-auto px-3 py-8">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="../index.html" class="text-black font-raleway text-xl md:text-3xl font-medium"
+                            style="font-weight: 550; uppercase tracking-tighter hover:opacity-80 transition-opacity duration-300">
+                            ANDREA AIMAR
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-10">
+                        <a href="../stories.html"
+                            class="text-black font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-black transition-all duration-300">
+                            STORIES
+                        </a>
+                        <a href="../stories1.html"
+                            class="text-black font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-black transition-all duration-300">
+                            STORIES1
+                        </a>
+                        <a href="../stories2.html"
+                            class="text-black font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-black transition-all duration-300">
+                            STORIES2
+                        </a>
+                        <a href="../about.html"
+                            class="text-black font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-black transition-all duration-300">
+                            ABOUT
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-black focus:outline-none">
+                            <div class="hamburger-menu">
+                                <span class="block w-6 h-0.5 bg-black mb-1 transition-all duration-300"></span>
+                                <span class="block w-6 h-0.5 bg-black mb-1 transition-all duration-300"></span>
+                                <span class="block w-6 h-0.5 bg-black transition-all duration-300"></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation Menu -->
+                <div id="mobile-menu" class="md:hidden hidden mt-4 ">
+                    <div class="space-y-4">
+                        <a href="../stories.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            STORIES
+                        </a>
+                        <a href="../stories1.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            STORIES1
+                        </a>
+                        <a href="../stories2.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            STORIES2
+                        </a>
+                        <a href="../about.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            ABOUT
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu JavaScript -->
+            <script>
+                document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const hamburger = this.querySelector('.hamburger-menu');
+
+                    mobileMenu.classList.toggle('hidden');
+
+                    // Animate hamburger to X
+                    if (mobileMenu.classList.contains('hidden')) {
+                        hamburger.querySelector('span:nth-child(1)').style.transform = 'rotate(0deg) translate(0, 0)';
+                        hamburger.querySelector('span:nth-child(2)').style.opacity = '1';
+                        hamburger.querySelector('span:nth-child(3)').style.transform = 'rotate(0deg) translate(0, 0)';
+                    } else {
+                        hamburger.querySelector('span:nth-child(1)').style.transform = 'rotate(45deg) translate(4px, 4px)';
+                        hamburger.querySelector('span:nth-child(2)').style.opacity = '0';
+                        hamburger.querySelector('span:nth-child(3)').style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                    }
+                });
+
+                // Close mobile menu when clicking on links
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', function () {
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        const hamburger = document.querySelector('.hamburger-menu');
+
+                        mobileMenu.classList.add('hidden');
+                        hamburger.querySelector('span:nth-child(1)').style.transform = 'rotate(0deg) translate(0, 0)';
+                        hamburger.querySelector('span:nth-child(2)').style.opacity = '1';
+                        hamburger.querySelector('span:nth-child(3)').style.transform = 'rotate(0deg) translate(0, 0)';
+                    });
+                });
+            </script>
+        </header>
+
+        <!-- Main Content with proper padding for fixed header -->
+        <main id="main" class="">
+            <section class="max-w-6xl mx-auto px-6 py-12">
+                <div class="prose prose-lg max-w-none">
+                    <!-- Story Title -->
+                    <h1 class="text-4xl md:text-5xl font-raleway font-light mb-6 text-black">
+                        South Sudan: 2012-2022
+                    </h1>
+
+                    <!-- Story Subtitle -->
+                    <p class="text-lg text-gray-600 mb-8 font-raleway">
+                        Juba, South Sudan | 2012 - 2022
+                    </p>
+
+                    <!-- Story Content -->
+                    <div class="space-y-6 text-gray-800 leading-relaxed">
+                        <p>South Sudan, the world's youngest nation, has endured a decade of devastating civil war since
+                            its independence in 2011. What began as a political dispute between President Salva Kiir and
+                            his former deputy Riek Machar in December 2013 quickly spiraled into a brutal conflict that
+                            has torn apart the fabric of this nascent country.</p>
+
+                        <p>The civil war has been characterized by extreme violence, including ethnic killings, sexual
+                            violence, and the recruitment of child soldiers. Hundreds of thousands of people have been
+                            killed, while millions more have been displaced from their homes, creating one of Africa's
+                            largest refugee crises and putting immense strain on neighboring countries.</p>
+
+                        <p>The humanitarian situation in South Sudan remains dire, with more than half the population
+                            facing severe food insecurity. Climate change, including devastating floods and droughts,
+                            has compounded the crisis, destroying crops and livestock and making it even more difficult
+                            for communities to recover and rebuild.</p>
+
+                        <p>Despite multiple peace agreements and international mediation efforts, sustainable peace has
+                            remained elusive. The most recent peace deal, signed in 2018, has seen some progress but
+                            continues to face significant challenges in implementation, with ongoing violence in several
+                            regions and slow progress on key reforms.</p>
+
+                        <p>The international community has provided substantial humanitarian assistance, but access to
+                            affected populations remains limited due to ongoing insecurity and poor infrastructure.
+                            International peacekeepers have worked to protect civilians, but their mandate and resources
+                            have been tested by the scale and complexity of the crisis.</p>
+
+                        <p>The story of South Sudan over the past decade is one of immense suffering but also remarkable
+                            resilience. Despite facing unimaginable hardships, communities continue to hope for peace
+                            and work toward rebuilding their lives, while the international community grapples with how
+                            to support lasting stability in this troubled nation.</p>
+                    </div>
+
+                    <!-- Photo Gallery -->
+                    <div class="mt-12 space-y-8">
+                        <!-- Featured Image -->
+                        <div class="w-full">
+                            <img src="../photos/gallery 6.jpg" alt="South Sudan: 2012-2022 - Main Image"
+                                class="w-full h-auto shadow-lg">
+                            <p class="text-sm text-gray-500 mt-2 font-raleway italic">Displaced families in South Sudan
+                                seek shelter in UN protection sites.</p>
+                        </div>
+
+                        <!-- Secondary Images Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <img src="../photos/gallery 9.jpg" alt="South Sudan: 2012-2022 - Secondary Image 1"
+                                    class="w-full h-64 object-cover shadow-md">
+                                <p class="text-sm text-gray-500 mt-2 font-raleway italic">Children affected by conflict
+                                    receive education in temporary schools.</p>
+                            </div>
+                            <div>
+                                <img src="../photos/gallery 11.jpg" alt="South Sudan: 2012-2022 - Secondary Image 2"
+                                    class="w-full h-64 object-cover shadow-md">
+                                <p class="text-sm text-gray-500 mt-2 font-raleway italic">Communities struggle with food
+                                    insecurity and climate challenges.</p>
+                            </div>
+                        </div>
+
+                        <!-- Additional Images -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <img src="../photos/gallery 31.jpg" alt="South Sudan: 2012-2022 - Additional Image 1"
+                                    class="w-full h-64 object-cover shadow-md">
+                                <p class="text-sm text-gray-500 mt-2 font-raleway italic">International peacekeepers
+                                    work to protect civilian populations.</p>
+                            </div>
+                            <div>
+                                <img src="../photos/gallery 1.jpg" alt="South Sudan: 2012-2022 - Additional Image 2"
+                                    class="w-full h-64 object-cover shadow-md">
+                                <p class="text-sm text-gray-500 mt-2 font-raleway italic">Women play crucial roles in
+                                    peace-building and reconciliation efforts.</p>
+                            </div>
+                        </div>
+
+                        <!-- Second Row of Additional Images -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <img src="../photos/gallery 6.jpg" alt="South Sudan: 2012-2022 - Additional Image 3"
+                                    class="w-full h-64 object-cover shadow-md">
+                                <p class="text-sm text-gray-500 mt-2 font-raleway italic">Humanitarian aid workers
+                                    provide essential services despite security risks.</p>
+                            </div>
+                            <div>
+                                <img src="../photos/gallery 9.jpg" alt="South Sudan: 2012-2022 - Additional Image 4"
+                                    class="w-full h-64 object-cover shadow-md">
+                                <p class="text-sm text-gray-500 mt-2 font-raleway italic">Hope persists among South
+                                    Sudanese for a peaceful and prosperous future.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
