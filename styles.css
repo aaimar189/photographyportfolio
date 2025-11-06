@@ -497,3 +497,21 @@ img,
 [class*="rounded"] {
     border-radius: 0 !important;
 }
+
+/* Custom spacing for last row images on medium+ screens */
+@media (min-width: 768px) {
+    img.last-row-spacing {
+        margin-top: 2rem;
+    }
+}
+
+/* Custom spacing for mobile devices (less than 768px) */
+@media (max-width: 767px) {
+    img.vertical-row-second-img {
+        margin-top: 2rem;
+    }
+
+    img.fourth-row-first-img {
+        margin-top: 50px;
+    }
+}
