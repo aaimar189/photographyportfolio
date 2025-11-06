@@ -514,4 +514,9 @@ img,
     img.fourth-row-first-img {
         margin-top: 50px;
     }
+
+    /* Homepage copyright text right padding on mobile */
+    .home-copyright-mobile {
+        padding-right: 5px;
+    }
 }
