@@ -508,11 +508,11 @@ img,
 /* Custom spacing for mobile devices (less than 768px) */
 @media (max-width: 767px) {
     img.vertical-row-second-img {
-        margin-top: 2rem;
+        margin-top: 3rem !important;
     }
 
     img.fourth-row-first-img {
-        margin-top: 50px;
+        margin-top: 85px !important;
     }
 
     /* Homepage copyright text right padding on mobile */
