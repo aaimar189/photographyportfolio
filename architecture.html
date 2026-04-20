@@ -2,110 +2,105 @@
 <html class="fsvs" lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reportage - Andrea Aimar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reportage - Andrea Aimar</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
-<body>
+<body class="home">
 
-<!-- HEADER COPIATO CORRETTAMENTE DALLA HOME -->
+<!-- HEADER IDENTICO ALLA HOMEPAGE -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
-  <nav class="max-w-screen-2xl mx-auto px-3 py-8">
-    <div class="flex items-center justify-between">
+<nav class="max-w-screen-2xl mx-auto px-3 py-8">
+<div class="flex items-center justify-between">
 
-      <!-- LOGO -->
-      <a href="index.html"
-        class="text-white font-raleway text-xl md:text-3xl font-medium hover:opacity-80 transition-opacity duration-300"
-        style="font-weight: 550;">
-        ANDREA AIMAR
-      </a>
+<div class="flex-shrink-0">
+<a href="index.html"
+class="text-white font-raleway text-xl md:text-3xl font-medium hover:opacity-80 transition-opacity duration-300"
+style="font-weight: 550;">
+ANDREA AIMAR
+</a>
+</div>
 
-      <!-- MENU DESKTOP -->
-      <div class="hidden md:flex space-x-10">
-        <a href="reportage.html"
-          class="text-white text-xs uppercase tracking-wider py-4 border-b border-white">
-          REPORTAGE
-        </a>
+<div class="hidden md:flex items-center space-x-10">
+<a href="reportage.html"
+class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-white">
+REPORTAGE
+</a>
 
-        <a href="events.html"
-          class="text-white text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-          EVENTS
-        </a>
+<a href="events.html"
+class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+EVENTS
+</a>
 
-        <a href="live-music.html"
-          class="text-white text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-          LIVE MUSIC
-        </a>
+<a href="live-music.html"
+class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+LIVE MUSIC
+</a>
 
-        <a href="architecture.html"
-          class="text-white text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-          ARCHITECTURE
-        </a>
+<a href="architecture.html"
+class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+ARCHITECTURE
+</a>
 
-        <a href="about.html"
-          class="text-white text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-          ABOUT
-        </a>
-      </div>
+<a href="about.html"
+class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+ABOUT
+</a>
+</div>
 
-    </div>
-  </nav>
+</div>
+</nav>
 </header>
 
 <main id="fsvs-body">
 
-  <!-- PROGETTO 1 -->
-  <div class="slide active" style="background-image: url('photos/architecture/guochang-temple-1.jpg');">
-    <div class="absolute bottom-12 left-8 text-white">
-      <h1 class="text-4xl">Project One</h1>
-      <p class="text-sm opacity-80">Description — 2023</p>
-    </div>
-  </div>
+<!-- PROGETTO 1 -->
+<div class="slide active" style="background-image: url('photos/project1-1.jpg');">
+<div class="absolute bottom-12 left-8 text-white">
+<h1 class="text-4xl font-raleway">Project One</h1>
+<p class="text-sm opacity-80">Description — 2023</p>
+</div>
 
-  <div class="slide" style="background-image: url('photos/project1-2.jpg');"></div>
-  <div class="slide" style="background-image: url('photos/project1-3.jpg');"></div>
+<div class="absolute bottom-10 right-10 text-white cursor-pointer">
+<div class="text-xs opacity-70">Next project</div>
+<div class="text-xl">↓</div>
+</div>
+</div>
 
-  <!-- NEXT PROJECT -->
-  <div class="slide flex items-end justify-center pb-10 text-white">
-    <div class="text-center">
-      <div class="text-sm tracking-wider mb-2 opacity-80">Next project</div>
-      <div class="text-2xl opacity-80">↓</div>
-    </div>
-  </div>
+<div class="slide" style="background-image: url('photos/project1-2.jpg');"></div>
+<div class="slide" style="background-image: url('photos/project1-3.jpg');"></div>
 
-  <!-- PROGETTO 2 -->
-  <div class="slide" style="background-image: url('photos/project2-1.jpg');">
-    <div class="absolute bottom-12 left-8 text-white">
-      <h1 class="text-4xl">Project Two</h1>
-      <p class="text-sm opacity-80">Description — 2024</p>
-    </div>
-  </div>
+<!-- PROGETTO 2 -->
+<div class="slide" style="background-image: url('photos/project2-1.jpg');">
+<div class="absolute bottom-12 left-8 text-white">
+<h1 class="text-4xl font-raleway">Project Two</h1>
+<p class="text-sm opacity-80">Description — 2024</p>
+</div>
 
-  <div class="slide" style="background-image: url('photos/project2-2.jpg');"></div>
-  <div class="slide" style="background-image: url('photos/project2-3.jpg');"></div>
+<div class="absolute bottom-10 right-10 text-white cursor-pointer">
+<div class="text-xs opacity-70">Next project</div>
+<div class="text-xl">↓</div>
+</div>
+</div>
 
-  <!-- NEXT PROJECT -->
-  <div class="slide flex items-end justify-center pb-10 text-white">
-    <div class="text-center">
-      <div class="text-sm tracking-wider mb-2 opacity-80">Next project</div>
-      <div class="text-2xl opacity-80">↓</div>
-    </div>
-  </div>
+<div class="slide" style="background-image: url('photos/project2-2.jpg');"></div>
+<div class="slide" style="background-image: url('photos/project2-3.jpg');"></div>
 
-  <!-- PROGETTO 3 -->
-  <div class="slide" style="background-image: url('photos/project3-1.jpg');">
-    <div class="absolute bottom-12 left-8 text-white">
-      <h1 class="text-4xl">Project Three</h1>
-      <p class="text-sm opacity-80">Description — 2022</p>
-    </div>
-  </div>
+<!-- PROGETTO 3 -->
+<div class="slide" style="background-image: url('photos/project3-1.jpg');">
+<div class="absolute bottom-12 left-8 text-white">
+<h1 class="text-4xl font-raleway">Project Three</h1>
+<p class="text-sm opacity-80">Description — 2022</p>
+</div>
+</div>
 
-  <div class="slide" style="background-image: url('photos/project3-2.jpg');"></div>
-  <div class="slide" style="background-image: url('photos/project3-3.jpg');"></div>
+<div class="slide" style="background-image: url('photos/project3-2.jpg');"></div>
+<div class="slide" style="background-image: url('photos/project3-3.jpg');"></div>
 
 </main>
 
