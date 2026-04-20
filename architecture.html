@@ -9,48 +9,81 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="styles.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  html.fsvs {
+    position: static;
+    overflow: auto;
+  }
+
+  #fsvs-body {
+    position: static !important;
+    height: auto !important;
+  }
+
+  .slide {
+    position: relative !important;
+    height: auto !important;
+    min-height: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    margin-bottom: 40px;
+  }
+
+  .slide::before {
+    content: "";
+    display: block;
+    padding-top: 66%;
+  }
+
+  .slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* INTRO */
+  .mobile-intro {
+    background: black;
+    color: white;
+    padding: 120px 20px 40px;
+  }
+
+  /* NEXT PROJECT */
+  .next-project-mobile {
+    text-align: center;
+    padding: 60px 0;
+    color: white;
+  }
+}
+
+</style>
+
 </head>
 
 <body class="home">
 
-<!-- HEADER IDENTICO ALLA HOMEPAGE -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
 <nav class="max-w-screen-2xl mx-auto px-3 py-8">
 <div class="flex items-center justify-between">
 
 <div class="flex-shrink-0">
 <a href="index.html"
-class="text-white font-raleway text-xl md:text-3xl font-medium hover:opacity-80 transition-opacity duration-300"
+class="text-white font-raleway text-xl md:text-3xl font-medium"
 style="font-weight: 550;">
 ANDREA AIMAR
 </a>
 </div>
 
 <div class="hidden md:flex items-center space-x-10">
-<a href="reportage.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-white">
-REPORTAGE
-</a>
-
-<a href="events.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-EVENTS
-</a>
-
-<a href="live-music.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-LIVE MUSIC
-</a>
-
-<a href="architecture.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-ARCHITECTURE
-</a>
-
-<a href="about.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-ABOUT
-</a>
+<a href="reportage.html" class="text-white text-xs uppercase py-4 border-b border-white">REPORTAGE</a>
+<a href="events.html" class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white">EVENTS</a>
+<a href="live-music.html" class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white">LIVE MUSIC</a>
+<a href="architecture.html" class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white">ARCHITECTURE</a>
+<a href="about.html" class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white">ABOUT</a>
 </div>
 
 </div>
@@ -59,48 +92,32 @@ ABOUT
 
 <main id="fsvs-body">
 
-<!-- PROGETTO 1 -->
-<div class="slide active" style="background-image: url('photos/project1-1.jpg');">
-<div class="absolute bottom-12 left-8 text-white">
-<h1 class="text-4xl font-raleway">Project One</h1>
+<!-- MOBILE INTRO -->
+<div class="mobile-intro md:hidden">
+<h1 class="text-3xl font-raleway">Project Title</h1>
+<p class="text-sm opacity-80 mt-2">Description • 2023</p>
+</div>
+
+<!-- DESKTOP / SLIDES -->
+<div class="slide active" style="background-image:url('photos/project1-1.jpg')">
+<div class="hidden md:block absolute bottom-12 left-8 text-white">
+<h1 class="text-4xl font-raleway">Project Title</h1>
 <p class="text-sm opacity-80">Description — 2023</p>
 </div>
 
-<div class="absolute bottom-10 right-10 text-white cursor-pointer">
+<div class="hidden md:block absolute bottom-10 right-10 text-white">
 <div class="text-xs opacity-70">Next project</div>
 <div class="text-xl">↓</div>
 </div>
 </div>
 
-<div class="slide" style="background-image: url('photos/project1-2.jpg');"></div>
-<div class="slide" style="background-image: url('photos/project1-3.jpg');"></div>
+<div class="slide" style="background-image:url('photos/project1-2.jpg')"></div>
+<div class="slide" style="background-image:url('photos/project1-3.jpg')"></div>
 
-<!-- PROGETTO 2 -->
-<div class="slide" style="background-image: url('photos/project2-1.jpg');">
-<div class="absolute bottom-12 left-8 text-white">
-<h1 class="text-4xl font-raleway">Project Two</h1>
-<p class="text-sm opacity-80">Description — 2024</p>
+<!-- MOBILE NEXT -->
+<div class="next-project-mobile md:hidden">
+Next project ↓
 </div>
-
-<div class="absolute bottom-10 right-10 text-white cursor-pointer">
-<div class="text-xs opacity-70">Next project</div>
-<div class="text-xl">↓</div>
-</div>
-</div>
-
-<div class="slide" style="background-image: url('photos/project2-2.jpg');"></div>
-<div class="slide" style="background-image: url('photos/project2-3.jpg');"></div>
-
-<!-- PROGETTO 3 -->
-<div class="slide" style="background-image: url('photos/project3-1.jpg');">
-<div class="absolute bottom-12 left-8 text-white">
-<h1 class="text-4xl font-raleway">Project Three</h1>
-<p class="text-sm opacity-80">Description — 2022</p>
-</div>
-</div>
-
-<div class="slide" style="background-image: url('photos/project3-2.jpg');"></div>
-<div class="slide" style="background-image: url('photos/project3-3.jpg');"></div>
 
 </main>
 
