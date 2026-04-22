@@ -29,13 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
         updateSlider();
     }
 
-    // 🔥 NUOVA FUNZIONE (NON TOCCARE ALTRO)
     window.nextProject = function () {
-    currentIndex += 3;
+        currentIndex += 3;
 
-    if (currentIndex >= slides.length) {
-        currentIndex = 0;
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+
+        updateSlider();
     }
 
-    updateSlider();
-}
+});
