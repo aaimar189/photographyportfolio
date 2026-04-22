@@ -9,15 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
         slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
     }
 
-    window.next = function () {
-        currentIndex++;
+    window.nextProject = function () {
 
-        if (currentIndex >= slides.length) {
-            currentIndex = 0;
-        }
+    // trova il prossimo multiplo di 3
+    currentIndex = Math.ceil((currentIndex + 1) / 3) * 3;
 
-        updateSlider();
+    if (currentIndex >= slides.length) {
+        currentIndex = 0;
     }
+
+    updateSlider();
+}
 
     window.prev = function () {
         currentIndex--;
