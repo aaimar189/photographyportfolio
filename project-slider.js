@@ -9,23 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
         slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
     }
 
-    window.nextProject = function () {
-
-    // trova il prossimo multiplo di 3
-    currentIndex = Math.ceil((currentIndex + 1) / 3) * 3;
-
-    if (currentIndex >= slides.length) {
-        currentIndex = 0;
+    // 👉 FRECCIA DESTRA (MANCAVA)
+    window.next = function () {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
     }
 
-    updateSlider();
-}
-
+    // 👉 FRECCIA SINISTRA
     window.prev = function () {
-        currentIndex--;
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+    }
 
-        if (currentIndex < 0) {
-            currentIndex = slides.length - 1;
+    // 👉 NEXT PROJECT
+    window.nextProject = function () {
+        currentIndex = Math.ceil((currentIndex + 1) / 3) * 3;
+
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
         }
 
         updateSlider();
