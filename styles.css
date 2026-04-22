@@ -602,3 +602,21 @@ img,
 .project-right {
     right: 20px;
 }
+
+
+/* === NEXT PROJECT BUTTON === */
+
+.next-project {
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    color: white;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.next-project:hover {
+    opacity: 1;
+    transform: translateY(2px);
+}
