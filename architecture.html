@@ -4,62 +4,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reportage - Andrea Aimar</title>
+<title>Architecture - Andrea Aimar</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="styles.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <style>
-
-/* ===== MOBILE FIX ===== */
 @media (max-width: 768px) {
-
-  html.fsvs {
-    position: static;
-    overflow: auto;
-  }
-
-  #fsvs-body {
-    position: static !important;
-    height: auto !important;
-  }
+  html.fsvs { position: static; overflow: auto; }
+  #fsvs-body { position: static !important; height: auto !important; }
 
   .slide {
     position: relative !important;
     height: auto !important;
-    min-height: auto !important;
     transform: none !important;
     opacity: 1 !important;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
 
-  .slide::before {
-    content: "";
-    display: block;
-    padding-top: 66%;
-  }
-
-  .slide {
-    background-size: cover;
-    background-position: center;
-  }
-
-  /* INTRO */
   .mobile-intro {
     background: black;
     color: white;
-    padding: 120px 20px 40px;
+    padding: 110px 20px 40px;
   }
 
-  /* NEXT PROJECT */
+  .mobile-image {
+    width: 100%;
+    height: auto;
+  }
+
   .next-project-mobile {
     text-align: center;
-    padding: 60px 0;
+    padding: 60px 0 80px;
     color: white;
   }
 }
-
 </style>
 
 </head>
@@ -70,21 +50,41 @@
 <nav class="max-w-screen-2xl mx-auto px-3 py-8">
 <div class="flex items-center justify-between">
 
-<div class="flex-shrink-0">
 <a href="index.html"
-class="text-white font-raleway text-xl md:text-3xl font-medium"
-style="font-weight: 550;">
+class="text-white font-raleway text-xl md:text-3xl font-medium">
 ANDREA AIMAR
 </a>
-</div>
 
 <div class="hidden md:flex items-center space-x-10">
-<a href="reportage.html" class="text-white text-xs uppercase py-4 border-b border-white">REPORTAGE</a>
-<a href="events.html" class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white">EVENTS</a>
-<a href="live-music.html" class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white">LIVE MUSIC</a>
-<a href="architecture.html" class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white">ARCHITECTURE</a>
-<a href="about.html" class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white">ABOUT</a>
+
+<a href="reportage.html"
+class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white/50">
+REPORTAGE
+</a>
+
+<a href="events.html"
+class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white/50">
+EVENTS
+</a>
+
+<a href="live-music.html"
+class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white/50">
+LIVE MUSIC
+</a>
+
+<a href="architecture.html"
+class="text-white text-xs uppercase py-4 border-b-2 border-white">
+ARCHITECTURE
+</a>
+
+<a href="about.html"
+class="text-white text-xs uppercase py-4 border-b border-transparent hover:border-white/50">
+ABOUT
+</a>
+
 </div>
+
+<div class="md:hidden text-white text-2xl">☰</div>
 
 </div>
 </nav>
@@ -92,14 +92,12 @@ ANDREA AIMAR
 
 <main id="fsvs-body">
 
-<!-- MOBILE INTRO -->
 <div class="mobile-intro md:hidden">
 <h1 class="text-3xl font-raleway">Project Title</h1>
 <p class="text-sm opacity-80 mt-2">Description • 2023</p>
 </div>
 
-<!-- DESKTOP / SLIDES -->
-<div class="slide active" style="background-image:url('photos/architecture/guochang-temple-1.jpg')">
+<div class="slide active" style="background-image:url('photos/project1-1.jpg')">
 <div class="hidden md:block absolute bottom-12 left-8 text-white">
 <h1 class="text-4xl font-raleway">Project Title</h1>
 <p class="text-sm opacity-80">Description — 2023</p>
@@ -114,9 +112,15 @@ ANDREA AIMAR
 <div class="slide" style="background-image:url('photos/project1-2.jpg')"></div>
 <div class="slide" style="background-image:url('photos/project1-3.jpg')"></div>
 
-<!-- MOBILE NEXT -->
+<div class="md:hidden px-4 space-y-6">
+<img src="photos/project1-1.jpg" class="mobile-image">
+<img src="photos/project1-2.jpg" class="mobile-image">
+<img src="photos/project1-3.jpg" class="mobile-image">
+</div>
+
 <div class="next-project-mobile md:hidden">
-Next project ↓
+<div class="text-sm opacity-70">Next project</div>
+<div class="text-2xl mt-2">↓</div>
 </div>
 
 </main>
