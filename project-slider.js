@@ -29,4 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
         updateSlider();
     }
 
+    // 🔥 NUOVA FUNZIONE (NON TOCCARE ALTRO)
+    window.nextProject = function () {
+        currentIndex += 3; // salta 3 slide (1 progetto)
+
+        if (currentIndex >= slides.length) {
+            currentIndex = 0;
+        }
+
+        updateSlider();
+    }
+
 });
