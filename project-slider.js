@@ -1,23 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
+let currentIndex = 0;
 
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.project-slide');
-    const slider = document.getElementById('slider');
+const slider = document.getElementById("slider");
+const slides = document.querySelectorAll(".project-slide");
 
-    function updateSlider() {
-        slider.style.transform = `translateX(-${currentIndex * 100}vw)`;
+function updateSlider() {
+    const slideWidth = slider.clientWidth;
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+function next() {
+    currentIndex++;
+
+    if (currentIndex >= slides.length) {
+        currentIndex = 0;
     }
 
-    window.next = function () {
-        currentIndex++;
-        if (currentIndex >= slides.length) currentIndex = 0;
-        updateSlider();
+    updateSlider();
+}
+
+function prev() {
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = slides.length - 1;
     }
 
-    window.prev = function () {
-        currentIndex--;
-        if (currentIndex < 0) currentIndex = slides.length - 1;
-        updateSlider();
-    }
-
-});
+    updateSlider();
+}
