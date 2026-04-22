@@ -567,6 +567,27 @@ img,
     height: 100vh;
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+
+.project-caption {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    color: white;
+    max-width: 600px;
+}
+
+.project-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    opacity: 0.85;
 }
 
 .project-left {
