@@ -560,6 +560,7 @@ img,
 .project-slider {
     display: flex;
     transition: transform 0.6s ease;
+    overflow: hidden;
 }
 
 .project-slide {
