@@ -1,176 +1,515 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Architecture</title>
+﻿<!DOCTYPE html>
+<html class="fsvs" lang="en-US">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="styles.css">
-
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SPXTERYLPC"></script>
 <script>
-tailwind.config = {
-    theme: {
-        extend: {
-            fontFamily: {
-                'raleway': ['Libre Baskerville', 'serif'],
-                'gotham': ['Inter', 'sans-serif'],
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SPXTERYLPC');
+</script>
+    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Andrea Aimar WorldWide Photographer from Torino</title>
+    <meta name="description" content="Photographer - ANDREA AIMAR">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'raleway': ['Libre Baskerville', 'serif'],
+                        'gotham': ['Inter', 'sans-serif'],
+                    }
+                }
             }
         }
-    }
-}
-</script>
-
-<style>
-body { margin:0; overflow:hidden; }
-
-/* Horizontal slider */
-.slider {
-  display:flex;
-  width:300vw;
-  height:100vh;
-  transition:transform 0.6s ease;
-}
-
-.slide {
-  width:100vw;
-  height:100vh;
-  background-size:cover;
-  background-position:center;
-}
-
-/* arrows */
-.arrow {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:30px;
-  color:white;
-  cursor:pointer;
-  opacity:0.6;
-  z-index:20;
-}
-.arrow:hover { opacity:1; }
-.left { left:25px; }
-.right { right:25px; }
-</style>
+    </script>
 </head>
 
-<body>
+<body class="home">
+    <div id="wrapper" class="min-h-screen">
+        <div id="home" class="relative -top-px"></div>
 
-<!-- HEADER IDENTICO ALLA HOMEPAGE -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
-<nav class="max-w-screen-2xl mx-auto px-3 py-8">
-<div class="flex items-center justify-between">
+        <!-- Clean Tailwind Navigation -->
+        <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+            <nav class="max-w-screen-2xl mx-auto px-3 py-8">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html"
+                            class="text-white font-raleway text-xl md:text-3xl font-medium hover:opacity-80 transition-opacity duration-300"
+                            style="font-weight: 550;">
+                            ANDREA AIMAR
+                        </a>
+                    </div>
 
-<!-- LOGO -->
-<div class="flex-shrink-0">
-<a href="index.html"
-class="text-white font-raleway text-xl md:text-3xl font-medium hover:opacity-80 transition-opacity duration-300"
-style="font-weight: 550;">
-ANDREA AIMAR
-</a>
-</div>
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-10">
+                        <a href="reportage.html"
+                            class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+                            REPORTAGE
+                        </a>
+                        <a href="events.html"
+                            class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+                            EVENTS
+                        </a>
+                        <a href="live-music.html"
+                            class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+                            LIVE MUSIC
+                        </a>
+                        <a href="architecture.html"
+                            class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+                            ARCHITECTURE
+                        </a>
+                        <a href="about.html"
+                            class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
+                            ABOUT
+                        </a>
+                    </div>
 
-<!-- MENU DESKTOP -->
-<div class="hidden md:flex items-center space-x-10">
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                            <div class="hamburger-menu">
+                                <span class="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
+                                <span class="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
+                                <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                            </div>
+                            <!-- Simple Close Icon (hidden by default) -->
+                            <div class="close-icon hidden">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
 
-<a href="reportage.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-REPORTAGE
-</a>
+                <!-- Mobile Navigation Menu -->
+                <div id="mobile-menu" class="md:hidden hidden mt-4">
+                    <div class="space-y-4">
+                        <a href="reportage.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            REPORTAGE
+                        </a>
+                        <a href="events.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            EVENTS
+                        </a>
+                        <a href="live-music.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            LIVE MUSIC
+                        </a>
+                        <a href="architecture.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            ARCHITECTURE
+                        </a>
+                        <a href="about.html"
+                            class="block text-black font-raleway text-sm uppercase tracking-wider py-3 hover:opacity-70 transition-all duration-300">
+                            ABOUT
+                        </a>
+                    </div>
+                </div>
+            </nav>
 
-<a href="events.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-EVENTS
-</a>
+            <!-- Mobile Menu JavaScript -->
+            <script>
+                document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const hamburger = this.querySelector('.hamburger-menu');
+                    const closeIcon = this.querySelector('.close-icon');
 
-<a href="live-music.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-LIVE MUSIC
-</a>
+                    mobileMenu.classList.toggle('hidden');
 
-<a href="architecture.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-white transition-all duration-300">
-ARCHITECTURE
-</a>
+                    // Toggle between hamburger and close icon
+                    if (mobileMenu.classList.contains('hidden')) {
+                        // Show hamburger, hide close icon
+                        hamburger.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    } else {
+                        // Hide hamburger, show close icon
+                        hamburger.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                    }
+                });
 
-<a href="about.html"
-class="text-white font-raleway text-xs uppercase tracking-wider py-4 border-b border-transparent hover:border-white transition-all duration-300">
-ABOUT
-</a>
+                // Close mobile menu when clicking on links
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', function () {
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        const hamburger = document.querySelector('.hamburger-menu');
+                        const closeIcon = document.querySelector('.close-icon');
 
-</div>
+                        mobileMenu.classList.add('hidden');
+                        // Show hamburger, hide close icon
+                        hamburger.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    });
+                });
+            </script>
+        </header>
 
-<!-- MOBILE -->
-<div class="md:hidden">
-<button id="mobile-menu-btn" class="text-white focus:outline-none">
-<div class="hamburger-menu">
-<span class="block w-6 h-0.5 bg-white mb-1"></span>
-<span class="block w-6 h-0.5 bg-white mb-1"></span>
-<span class="block w-6 h-0.5 bg-white"></span>
-</div>
-</button>
-</div>
+        <!-- Main slider container with local photos -->
+        <main id="main" class="clearfix width-100">
+            <div class="fusion-row" style="max-width:100%;">
+                <div id="fsvs-body">
+                    <div class="slide" style="background-image: url('photos/impression-lijiang-show-yunnan.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8 block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Lijiang's Impressions Show in Yunnan
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/coez-live-show-torino.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Rapper Coez's show in 2025 in Torino
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/humanoid-robot-shanghai-china.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Humanoid robot at the WAIC 2024 in Shanghai
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/ferrari-popup-xmas.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Christmas Popup of Ferrari in Shanghai
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/mom-child-train-china.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Mom and kid in a train station in Zhejiang
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/people-landscape-temple-zhejiang.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Two workers in a temple in Shaoxing, Zhejiang
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/skyscraper-changzhou-china.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Modern building in Changzhou City, Jiangsu
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/songyang-ancient-villages.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Ancient villages on the mountains of Zhejiang
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/souvenirs-jade-seller-shandong.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Local vendor in Taishan, Shandong
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/tesla-cybertruck-event-shanghai.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Cybertruck Tesla event in the downtown of Shanghai
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/tea-terraces-temple-jiangsu.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Tea terraces outside of a temple in Jiangsu
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/tourists-sunrise-yunnan-kawagarbo.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Visitors witness the sunrise in Deqing, Yunnan
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/traditional-opera-show-taipei.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    A traditional opera singer in Taipei
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/wood-carving-village-buddha-suzhou.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    A Buddha sculpture manufacturer in Jiangsu
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/worshippers-modern-temple-jiangsu.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Worshippers visit a modern temple in Nanjing, Jiangsu
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/new-year-eve-xixinan-anhui.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    People celebrate the New Year's Eve in Xixinan, in Anhui
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                          </section>
+                    </div>
+                    <div class="slide" style="background-image: url('photos/chinese-new-year-shop-accessories.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Traditional decorations for the Chinese New Year in a shop in Shanghai
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                    </div>
+                  <div class="slide" style="background-image: url('photos/suzhou-museum-contemporary-art.jpg');">
+                        <section class="slider-caption">
+                            <div class="absolute bottom-32 left-3 z-10 md:bottom-8">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90">
+                                    Indoor of Suzhou Museum of Contemporary Art
+                                </p>
+                            </div>
+                            <div class="absolute bottom-8 right-3 z-10 md:block hidden">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 text-right">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                            <div class="absolute bottom-20 left-3 z-10 md:hidden block">
+                                <p class="text-white text-xs font-raleway tracking-wider opacity-90 home-copyright-mobile">
+                                    © 2026 Andrea Aimar — All images copyright protected
+                                </p>
+                            </div>
+                    </div>
 
-</div>
+                <!-- Pagination removed for cleaner look -->
+            </div>
+        </main>
+    </div>
 
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="md:hidden hidden mt-4">
-<div class="space-y-4">
-
-<a href="reportage.html" class="block text-black font-raleway text-sm uppercase tracking-wider py-3">REPORTAGE</a>
-<a href="events.html" class="block text-black font-raleway text-sm uppercase tracking-wider py-3">EVENTS</a>
-<a href="live-music.html" class="block text-black font-raleway text-sm uppercase tracking-wider py-3">LIVE MUSIC</a>
-<a href="architecture.html" class="block text-black font-raleway text-sm uppercase tracking-wider py-3">ARCHITECTURE</a>
-<a href="about.html" class="block text-black font-raleway text-sm uppercase tracking-wider py-3">ABOUT</a>
-
-</div>
-</div>
-
-</nav>
-</header>
-
-<!-- SLIDER -->
-<div id="slider" class="slider">
-
-<div class="slide" style="background-image:url('photos/architecture/guochang-temple-1.jpg')"></div>
-<div class="slide" style="background-image:url('photos/architecture/guochang-temple-2.jpg')"></div>
-<div class="slide" style="background-image:url('photos/architecture/guochang-temple-3.jpg')"></div>
-
-</div>
-
-<div class="arrow left" onclick="prev()">‹</div>
-<div class="arrow right" onclick="next()">›</div>
-
-<script>
-let index = 0;
-const slider = document.getElementById("slider");
-
-function update(){
-  slider.style.transform = "translateX(-" + (index * 100) + "vw)";
-}
-
-function next(){
-  if(index < 2){
-    index++;
-    update();
-  }
-}
-
-function prev(){
-  if(index > 0){
-    index--;
-    update();
-  }
-}
-
-/* mobile menu */
-document.getElementById('mobile-menu-btn').addEventListener('click', function () {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
-});
-</script>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
