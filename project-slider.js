@@ -31,13 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 🔥 NUOVA FUNZIONE (NON TOCCARE ALTRO)
     window.nextProject = function () {
-        currentIndex += 3; // salta 3 slide (1 progetto)
+    currentIndex += 3;
 
-        if (currentIndex >= slides.length) {
-            currentIndex = 0;
-        }
-
-        updateSlider();
+    if (currentIndex >= slides.length) {
+        currentIndex = 0;
     }
 
-});
+    updateSlider();
+
+    // 👇 SCROLL LEGGERO (EFFETTO UX FIGO)
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
