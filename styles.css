@@ -580,15 +580,19 @@ img,
 }
 
 .project-title {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 64px;
+    font-family: "Playfair Display", serif; /* stesso del tuo nome */
+    font-size: 32px; /* 👈 regola se serve (uguale al logo) */
+    font-weight: 500;
     margin-bottom: 10px;
 }
 
 .project-description {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    opacity: 0.85;
+    font-family: "Raleway", sans-serif;
+    font-size: 12px; /* 👈 uguale ai menu */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+    line-height: 1.4;
 }
 
 .project-left {
