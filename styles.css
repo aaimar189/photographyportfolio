@@ -527,7 +527,6 @@ img,
 
 .project-slider {
     display: flex;
-    width: 300vw; /* 3 immagini */
     height: 100vh;
     transition: transform 0.6s ease;
     position: relative;
