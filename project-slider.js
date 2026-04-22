@@ -1,22 +1,27 @@
-let current = 0;
-const slider = document.querySelector('.project-slider');
+let currentIndex = 0;
 const slides = document.querySelectorAll('.project-slide');
-const total = slides.length;
 
 function updateSlider() {
-    slider.style.transform = `translateX(-${current * 100}vw)`;
+    const slider = document.getElementById('slider');
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
 function next() {
-    if (current < total - 1) {
-        current++;
-        updateSlider();
+    currentIndex++;
+    
+    if (currentIndex >= slides.length) {
+        currentIndex = 0; // 🔥 torna alla prima
     }
+
+    updateSlider();
 }
 
 function prev() {
-    if (current > 0) {
-        current--;
-        updateSlider();
+    currentIndex--;
+    
+    if (currentIndex < 0) {
+        currentIndex = slides.length - 1; // 🔥 vai all'ultima
     }
+
+    updateSlider();
 }
