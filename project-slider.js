@@ -38,10 +38,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateSlider();
-
-    // 👇 SCROLL LEGGERO (EFFETTO UX FIGO)
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 }
