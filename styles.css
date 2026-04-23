@@ -21,6 +21,12 @@
     box-sizing: border-box;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 html,
 body {
     margin: 0;
@@ -29,6 +35,16 @@ body {
     font-size: 16px;
     color: var(--text-color);
     line-height: 1.5;
+}
+
+/* Architecture page fullscreen layout */
+body.architecture {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
 }
 
 /* ========================================
@@ -242,6 +258,50 @@ body:not(.home) header a {
 
 body:not(.home) header .text-white {
     color: #000 !important;
+}
+
+/* Architecture page: keep all navbar text white only on this page */
+body.architecture header a,
+body.architecture header .text-white,
+body.architecture #mobile-menu-btn {
+    color: #fff !important;
+}
+
+body.architecture #mobile-menu {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 16px !important;
+    margin-top: 16px !important;
+}
+
+body.architecture #mobile-menu a {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-bottom: none !important;
+    border-radius: 0 !important;
+    padding: 12px 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    color: #000000 !important;
+    font-weight: normal !important;
+    text-shadow: none !important;
+    transition: all 0.3s ease !important;
+    letter-spacing: 0.05em !important;
+}
+
+body.architecture #mobile-menu a:hover {
+    background: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+    text-shadow: none !important;
+    opacity: 0.7 !important;
 }
 
 /* ========================================
@@ -522,23 +582,35 @@ img,
 }
 
 /* ========================================
-   PROJECT HORIZONTAL SLIDER (NEW)
+   PROJECT HORIZONTAL SLIDER
    ======================================== */
 
 .project-slider {
     display: flex;
+    width: 100vw;
     height: 100vh;
     transition: transform 0.6s ease;
     position: relative;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    will-change: transform;
+    counter-reset: slide-counter;
 }
 
 .project-slide {
+    display: block;
+    min-width: 100vw;
     width: 100vw;
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #1a1a1a;
+    position: relative;
     flex-shrink: 0;
+    padding: 0;
+    margin: 0;
 }
 
 /* ARROWS */
@@ -552,46 +624,16 @@ img,
     cursor: pointer;
     z-index: 999;
     user-select: none;
-}
-
-/* === PROJECT SLIDER === */
-
-.project-slider {
+    width: 50px;
+    height: 50px;
     display: flex;
-    transition: transform 0.6s ease;
-    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
-.project-slide {
-    min-width: 100vw; /* 🔥 fondamentale */
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.project-caption {
-    position: absolute;
-    bottom: 60px;
-    left: 60px;
-    color: white;
-    max-width: 600px;
-}
-
-.project-title {
-    font-family: "Playfair Display", serif; /* stesso del tuo nome */
-    font-size: 32px; /* 👈 regola se serve (uguale al logo) */
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.project-description {
-    font-family: "Raleway", sans-serif;
-    font-size: 12px; /* 👈 uguale ai menu */
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    opacity: 0.8;
-    line-height: 1.4;
+.project-arrow:hover {
+    background-color: transparent;
 }
 
 .project-left {
@@ -602,6 +644,33 @@ img,
     right: 20px;
 }
 
+.project-caption {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    color: white;
+    max-width: 600px;
+    z-index: 10;
+    background-color: transparent;
+    padding: 0;
+}
+
+.project-title {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.project-description {
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+    line-height: 1.4;
+}
 
 /* === NEXT PROJECT BUTTON === */
 
@@ -609,13 +678,81 @@ img,
     margin-top: 20px;
     cursor: pointer;
     font-family: "Playfair Display", serif;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
-    opacity: 0.8;
+    opacity: 1;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    padding: 0;
+    letter-spacing: 1px;
+    border: 0;
+    line-height: 1;
 }
 
 .next-project:hover {
-    opacity: 1;
-    transform: translateY(2px);
+    background: transparent;
+    transform: none;
+    opacity: 0.8;
+}
+
+.project-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50% !important;
+    border: 0;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: none;
+    line-height: 0;
+    display: block;
+    overflow: hidden;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.project-dot.active {
+    background: #fff;
+    transform: scale(1.15);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 28px;
+    }
+
+    .project-caption {
+        bottom: 40px;
+        left: 30px;
+        max-width: 90vw;
+    }
+
+    .project-arrow {
+        font-size: 28px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .project-left {
+        left: 10px;
+    }
+
+    .project-right {
+        right: 10px;
+    }
 }
