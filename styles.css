@@ -756,38 +756,3 @@ img,
         right: 10px;
     }
 }
-
-/* MOBILE PROJECT ESSAY TEST */
-.mobile-project-essay { display:none; }
-
-@media (max-width: 767px) {
-  .fusion-row { display:none !important; }
-  .mobile-project-essay {
-    display:block;
-    padding-top:120px;
-    padding-bottom:80px;
-  }
-  .mobile-project-cover {
-    padding: 0 20px 60px;
-  }
-  .mobile-project-cover h1 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-  }
-  .mobile-project-cover p {
-    margin-bottom: 32px;
-  }
-  .mobile-project-link {
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:.12em;
-    color:inherit;
-    text-decoration:none;
-  }
-  .mobile-project-gallery img {
-    width:100%;
-    height:auto;
-    display:block;
-    margin:0 0 24px;
-  }
-}
