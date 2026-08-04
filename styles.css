@@ -647,7 +647,7 @@ img,
 .project-caption {
     position: absolute;
     bottom: 60px;
-    left: 60px;
+    left: max(calc((100vw - 1536px) / 2 + 0.75rem), 0.75rem);
     color: white;
     max-width: 600px;
     z-index: 10;
@@ -756,11 +756,38 @@ img,
         right: 10px;
     }
 }
-/* Vertical photo essay test */
-.project-cover-test {width:100vw;height:100vh;position:relative;background-size:cover;background-position:center;}
-.project-gallery-test {width:100%;background:#000;}
-.project-gallery-test img {display:block;width:100%;height:auto;}
-.project-test-caption {position:absolute;left:3rem;bottom:3rem;color:white;z-index:5;}
-.project-test-caption a {color:white;text-decoration:none;}
-.project-test-button {margin-top:1.5rem;display:inline-block;border:1px solid white;padding:.8rem 1.2rem;font-size:.75rem;letter-spacing:.1em;}
-.next-project-test {display:block;color:white;padding:40px;text-align:center;font-size:.8rem;letter-spacing:.1em;}
+
+/* MOBILE PROJECT ESSAY TEST */
+.mobile-project-essay { display:none; }
+
+@media (max-width: 767px) {
+  .fusion-row { display:none !important; }
+  .mobile-project-essay {
+    display:block;
+    padding-top:120px;
+    padding-bottom:80px;
+  }
+  .mobile-project-cover {
+    padding: 0 20px 60px;
+  }
+  .mobile-project-cover h1 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  .mobile-project-cover p {
+    margin-bottom: 32px;
+  }
+  .mobile-project-link {
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:inherit;
+    text-decoration:none;
+  }
+  .mobile-project-gallery img {
+    width:100%;
+    height:auto;
+    display:block;
+    margin:0 0 24px;
+  }
+}
