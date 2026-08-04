@@ -647,7 +647,7 @@ img,
 .project-caption {
     position: absolute;
     bottom: 60px;
-    left: 60px;
+    left: max(calc((100vw - 1536px) / 2 + 0.75rem), 0.75rem);
     color: white;
     max-width: 600px;
     z-index: 10;
