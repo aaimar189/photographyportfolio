@@ -647,7 +647,7 @@ img,
 .project-caption {
     position: absolute;
     bottom: 60px;
-    left: max(calc((100vw - 1536px) / 2 + 0.75rem), 0.75rem);
+    left: 60px;
     color: white;
     max-width: 600px;
     z-index: 10;
@@ -756,3 +756,11 @@ img,
         right: 10px;
     }
 }
+/* Vertical photo essay test */
+.project-cover-test {width:100vw;height:100vh;position:relative;background-size:cover;background-position:center;}
+.project-gallery-test {width:100%;background:#000;}
+.project-gallery-test img {display:block;width:100%;height:auto;}
+.project-test-caption {position:absolute;left:3rem;bottom:3rem;color:white;z-index:5;}
+.project-test-caption a {color:white;text-decoration:none;}
+.project-test-button {margin-top:1.5rem;display:inline-block;border:1px solid white;padding:.8rem 1.2rem;font-size:.75rem;letter-spacing:.1em;}
+.next-project-test {display:block;color:white;padding:40px;text-align:center;font-size:.8rem;letter-spacing:.1em;}
